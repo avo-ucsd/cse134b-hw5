@@ -1,5 +1,22 @@
 :root {
+    /* Main color palette */
+    --rich-black: #001524ff;
+    --caribbean-current: #15616dff;
+    --papaya-whip: #ffecd1ff;
+    --orange-wheel: #ff7d00ff;
+    --sienna: #78290fff;
+
     --color-background-light: #fcfcfc; /* Off-white */
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Sizing */
+    --border-thickness: 0.25rem;
 }
 
 /********* Debugging Styling *********/
@@ -8,15 +25,23 @@
 }
 
 header, main, footer {
-    border: 4px solid;
-    padding: 8px;
-    margin: 8px;
+    border: 1px solid;
+    -padding: 8px;
+    -margin: 8px;
+
+    section {
+        border: 1px dotted;
+    }
 }
 
 /********* Grid Structuring *********/
 body {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(auto, 70rem)
+        minmax(1rem, 1fr);
+    gap: 1rem;
 }
 
 header {
@@ -35,12 +60,46 @@ footer {
 }
 
 /********* Styling *********/
+header, main, footer {
+    background: var(--color-background-light, white);
+    border: solid 
+            var(--border-large-thickness, 0.25rem)
+            var(--rich-black, #001524ff);
+}
+
 /* Header */
 header { 
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    align-items: center;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 2rem;
+        
+        li {
+            a {
+                text-decoration: none;
+                border: solid 
+                        var(--border-thickness, 0.25em)
+                        var(--rich-black, #001524ff);
+                padding: 0.5rem 1rem;
+                display: inline-block;
+            }
+        }
+    }
 }
 
-/* Main */
-header, main, footer {
-    background: var(--color-background-light, white);
+main {
+
+    section {
+        border: solid 
+                var(--border-thickness, 0.25em)
+                var(--rich-black, #001524ff);
+        margin: var(--spacing-lg, 2rem);
+    }
 }
+
