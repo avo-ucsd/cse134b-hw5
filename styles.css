@@ -5,10 +5,9 @@
     --sunset-1: #d64a4a;    /* warm red */
     --sunset-2: #ff8c5b;    /* amber orange */
     --sunset-3: #715eea;    /* violet */
-    --sunset-soft: #ffa69e; /* soft coral */
 
-    --color-background-light: #fcfcfc; 
-    --bg: linear-gradient(180deg, #fff8f6 0%, #f5f7ff 100%);
+    --primary-foreground: #fcfcfc; 
+    --primary-background: linear-gradient(180deg, #fff8f6 0%, #f5f7ff 100%);
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -31,12 +30,12 @@
     }
 
     header, main, footer {
-        border: 1px solid;
+        border: 1px solid #d2d2d2;
         -padding: 8px;
         -margin: 8px;
 
         section {
-            border: 1px dotted;
+            -border: 1px solid #d2d2d2;
         }
     }
 }
@@ -73,6 +72,7 @@
 }
 
 @layer base {
+    /* Reset base margin and padding */
     * {
         margin: 0;
         padding: 0;
@@ -91,7 +91,7 @@
 /* Header */
 @layer component {
     header { 
-        background: var(--color-background-light, #fcfcfc);
+        background: var(--primary-foreground, #fcfcfc);
         display: flex;
         flex-wrap: wrap;
         padding: var(--spacing-sm, 1rem) var(--spacing-lg, 2rem);
@@ -99,6 +99,7 @@
         justify-content: space-between;
         position: sticky; 
         top: 0;
+        
 
         a {
             text-decoration: none;
@@ -137,26 +138,41 @@
 /* Main */
 @layer component {
     main {
-        section {
-            background: var(--color-background-light, #fcfcfc);
-            margin-bottom: var(--spacing-lg, 2rem);
-            padding: var(--spacing-lg, 2rem);
+        section:first-of-type:has(picture) {
+            * {
+                margin: auto;
+            }
 
             picture > img {
                 display: block;
-                margin: auto;
                 margin-bottom: var(--spacing-xl, 3rem);
                 border-radius: 50%;
-                width: 50%;
-                height: 50%;
+                width: 30%;
+                height: 30%;
             }
+
+            h2 {
+                text-align: center;
+                margin-bottom: var(--spacing-md, 1.5rem);
+            }
+
+            p {
+                max-width: 65ch;
+                text-align: center;
+            }
+        }
+
+        section {
+            background: var(--primary-foreground, #fcfcfc);
+            margin-bottom: var(--spacing-lg, 2rem);
+            padding: var(--spacing-lg, 2rem);
 
             h2 {
                 font-family: var(--font-display);
                 font-weight: var(--weight-bld, 600);
                 background: linear-gradient(90deg,
-                    color-mix(in srgb, var(--sunset-1) 80%, white 20%),
-                    color-mix(in srgb, var(--sunset-3) 80%, white 20%)
+                    color-mix(in srgb, var(--sunset-1, #d64a4a), white 10%),
+                    color-mix(in srgb, var(--sunset-3, #715eea), white 10%)
                 );
                 -webkit-background-clip: text;
                 background-clip: text;
@@ -168,7 +184,7 @@
 }
 
 body {
-    background: var(--bg, white);
+    background: var(--primary-background, white);
 }
 
 /********* Media Queries: Steps *********/
