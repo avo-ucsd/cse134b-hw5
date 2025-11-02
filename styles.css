@@ -17,6 +17,10 @@
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
 
+    /* Font weights */
+    --weight-reg: 400;
+    --weight-bld: 600;
+
     --font-display: "Poppins", "Segoe UI", Roboto, sans-serif;
     --font-body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
 }
@@ -93,16 +97,16 @@ header, main, footer {
     header { 
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem; 
+        padding: var(--spacing-sm, 1rem) var(--spacing-lg, 2rem); 
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
 
         a {
             text-decoration: none;
 
             h1 {
                 font-family: var(--font-display);
-                font-weight: 600;
+                font-weight: var(--weight-bld, 600);
                 background-image: linear-gradient(90deg, var(--sunset-1), var(--sunset-3));
                 -webkit-background-clip: text;
                 background-clip: text;
@@ -114,14 +118,19 @@ header, main, footer {
             display: flex;
             flex-wrap: wrap;
             list-style: none;
-            gap: 2rem;
+            gap: var(--spacing-sm, 1rem);
             
             li {
-                a {
-                    padding: 0.5rem 1rem;
+                a { 
                     display: inline-block;
+                    font-weight: var(--weight-bld, 600);
+                    color: var(--sunset-3, #715eea);
                 }
             }
+        }
+
+        a:hover {
+            color: color-mix(in hsl, var(--sunset-3), black 15%);
         }
     }
 }
