@@ -6,6 +6,7 @@
     --color-sunset-1: #d64a4a;
     --color-sunset-2: #ff8c5b;
     --color-sunset-3: #715eea;
+    --color-shadow: #2e282c;
     --color-foreground-primary: #fcfcfc; 
     --color-background-primary: linear-gradient(180deg, #fff8f6 0%, #f5f7ff 100%);
 
@@ -50,7 +51,7 @@
         grid-template-rows:
             6rem 
             1fr 
-            6rem;
+            auto;
         min-height: 100vh;
         gap: var(--spacing-sm, 1rem);
     }
@@ -186,12 +187,7 @@
     footer {
         background: var(--color-foreground-primary, #fcfcfc);
         padding: var(--spacing-lg, 2rem);
-        -align-items: center;
-        -text-align: center;
-
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
+        text-align: center;
     }
     
 }
