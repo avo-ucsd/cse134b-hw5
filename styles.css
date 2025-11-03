@@ -12,18 +12,19 @@
     --color-shadow-2: 105, 87, 173;
     --color-foreground-primary: #fcfcfc;
     --color-background-primary: linear-gradient(180deg, #fff8f6 0%, #f5f7ff 100%);
+    --color-dark-mix: black 15%;
 
     --shadow-displacement-1: 0 6px 18px;
     --shadow-displacement-2: 0 2px 4px;
     --shadow-alpha-soft: 0.1;
     --shadow-alpha-hard: 0.12;
 
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
+    /* Relative units scaling */
+    --scale-xs: 0.5rem;
+    --scale-sm: 1rem;
+    --scale-md: 1.5rem;
+    --scale-lg: 2rem;
+    --scale-xl: 3rem;
 
     /* Font weights */
     --font-weight-reg: 400;
@@ -53,15 +54,15 @@
     body {
         display: grid;
         grid-template-columns:
-            minmax(var(--spacing-sm, 1rem), 1fr)
+            minmax(var(--scale-sm, 1rem), 1fr)
             minmax(auto, 60rem)
-            minmax(var(--spacing-sm, 1rem), 1fr);
+            minmax(var(--scale-sm, 1rem), 1fr);
         grid-template-rows:
             6rem 
             1fr 
             auto;
         min-height: 100vh;
-        gap: var(--spacing-sm, 1rem);
+        gap: var(--scale-sm, 1rem);
     }
 
     header {
@@ -89,7 +90,7 @@
     }
 
     ul, ol {
-        padding-left: var(--spacing-md, 1.5rem);
+        padding-left: var(--scale-md, 1.5rem);
     }
 
     body {
@@ -104,7 +105,7 @@
         background: var(--color-foreground-primary, #fcfcfc);
         display: flex;
         flex-wrap: wrap;
-        padding: var(--spacing-sm, 1rem) var(--spacing-lg, 2rem);
+        padding: var(--scale-sm, 1rem) var(--scale-lg, 2rem);
         align-items: center;
         justify-content: space-between;
         box-shadow:
@@ -130,7 +131,7 @@
             display: flex;
             flex-wrap: wrap;
             list-style: none;
-            gap: var(--spacing-sm, 1rem);
+            gap: var(--scale-sm, 1rem);
             
             li {
                 a { 
@@ -142,7 +143,7 @@
         }
 
         a:hover {
-            color: color-mix(in hsl, var(--color-sunset-3), black 15%);
+            color: color-mix(in hsl, var(--color-sunset-3), var(--color-dark-mix, black 15%));
         }
     }
 }
@@ -157,8 +158,8 @@
 
             picture > img {
                 display: block;
-                margin-bottom: var(--spacing-xl, 3rem);
-                border: var(--color-sunset-3) solid 0.5rem;
+                margin-bottom: var(--scale-xl, 3rem);
+                border: var(--color-sunset-3) solid var(--scale-xs, 0.5rem);
                 border-radius: 50%;
                 width: 30%;
                 height: 30%;
@@ -166,7 +167,7 @@
 
             h2 {
                 text-align: center;
-                margin-bottom: var(--spacing-md, 1.5rem);
+                margin-bottom: var(--scale-md, 1.5rem);
             }
 
             p {
@@ -177,8 +178,8 @@
 
         section {
             background: var(--color-foreground-primary, #fcfcfc);
-            margin-bottom: var(--spacing-lg, 2rem);
-            padding: var(--spacing-lg, 2rem);
+            margin-bottom: var(--scale-lg, 2rem);
+            padding: var(--scale-lg, 2rem);
             box-shadow:
                 var(--shadow-displacement-1, 0 6px 18px)
                 rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
@@ -195,79 +196,71 @@
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
-                margin-bottom: var(--spacing-sm, 1rem);
+                margin-bottom: var(--scale-sm, 1rem);
             }
         }
 
-       /* Highlights section - card layout */
+       /* Highlights section */
         section .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-md);
-        }
+            gap: var(--scale-lg);
+            margin-top: var(--scale-md);
 
-        /* Individual cards */
-        section .card-grid article {
-            background: var(--color-foreground-primary, #fcfcfc);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow:
-                var(--shadow-displacement-1, 0 6px 18px)
-                rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
-                var(--shadow-displacement-2, 0 2px 4px)
-                rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+            article {
+                background: var(--color-foreground-primary, #fcfcfc);
+                border-radius: var(--scale-sm, 1rem);
+                overflow: hidden;
+                box-shadow:
+                    var(--shadow-displacement-1, 0 6px 18px)
+                    rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
+                    var(--shadow-displacement-2, 0 2px 4px)
+                    rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
+                display: flex;
+                flex-direction: column;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-        /* Card image */
-        section .card-grid picture {
-            display: block;
-            width: 100%;
-            aspect-ratio: 3 / 2;
-            overflow: hidden;
-        }
+                /* Card Content */
+                h3 {
+                    font-family: var(--font-display);
+                    font-weight: var(--font-weight-bld);
+                    margin: var(--scale-md) var(--scale-md) var(--scale-xs);
+                }
 
-        section .card-grid picture img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+                p {
+                    margin: 0 var(--scale-md) var(--scale-md);
+                }
 
-        /* Card content */
-        section .card-grid article h3 {
-            font-family: var(--font-display);
-            font-weight: var(--font-weight-bld);
-            margin: var(--spacing-md) var(--spacing-md) var(--spacing-xs);
-        }
+                a {
+                    margin: 0 var(--scale-md) var(--scale-md);
+                    font-weight: var(--font-weight-bld);
+                    color: var(--color-sunset-3);
+                    text-decoration: none;
+                }
 
-        section .card-grid article p {
-            flex: 1;
-            margin: 0 var(--spacing-md) var(--spacing-md);
-            line-height: 1.5;
-        }
+                a:hover {
+                    color: color-mix(in srgb, var(--color-sunset-3), var(--color-dark-mix, black 15%));
+                }
+            }
 
-        section .card-grid article a {
-            align-self: flex-start;
-            margin: 0 var(--spacing-md) var(--spacing-md);
-            font-weight: var(--font-weight-bld);
-            color: var(--color-sunset-3);
-            text-decoration: none;
-        }
+            article:hover {
+                transform: translateY(-4px);
+            }
 
-        section .card-grid article a:hover {
-            color: color-mix(in srgb, var(--color-sunset-3), black 15%);
-        }
+            /* Card picture */
+            picture {
+                display: block;
+                width: 100%;
+                aspect-ratio: 3 / 2;
+                overflow: hidden;
 
-        /* Hover lift effect */
-        section .card-grid article:hover {
-            transform: translateY(-4px);
-            box-shadow:
-                0 10px 20px rgba(var(--color-shadow-1, 49, 44, 66), 0.12),
-                0 4px 8px rgba(var(--color-shadow-2, 105, 87, 173), 0.18);
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+            }
         }
 
 
@@ -275,72 +268,54 @@
         section .project-list {
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-md);
-        }
+            gap: var(--scale-lg);
+            margin-top: var(--scale-md);
 
-        section .project-list article {
-            background: var(--color-foreground-primary, #fcfcfc);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow:
-                var(--shadow-displacement-1, 0 6px 18px)
-                rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
-                var(--shadow-displacement-2, 0 2px 4px)
-                rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
-            display: flex;
-            flex-direction: row;
-            align-items: stretch;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+            article {
+                padding: var(--scale-md);
+                display: flex;
+                flex-direction: column;
+                background: var(--color-foreground-primary, #fcfcfc);
+                border-radius: var(--scale-sm, 1rem);
+                overflow: hidden;
+                box-shadow:
+                    var(--shadow-displacement-1, 0 6px 18px)
+                    rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
+                    var(--shadow-displacement-2, 0 2px 4px)
+                    rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
+                align-items: stretch;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-        section .project-list .project-image {
-            width: 12rem;
-            min-width: 12rem;
-            background: linear-gradient(135deg, var(--color-sunset-1), var(--color-sunset-3));
-            flex-shrink: 0;
-        }
+                h3 {
+                    font-family: var(--font-display);
+                    font-weight: var(--font-weight-bld);
+                    margin-bottom: var(--scale-xs);
+                    color: var(--color-text);
+                }
 
-        section .project-list .project-content {
-            padding: var(--spacing-md);
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
+                p {
+                    flex: 1;
+                    line-height: 1.6;
+                    margin-bottom: var(--scale-sm);
+                    color: var(--color-text);
+                }
 
-        section .project-list article h3 {
-            font-family: var(--font-display);
-            font-weight: var(--font-weight-bld);
-            margin-bottom: var(--spacing-xs);
-            color: var(--color-text);
-        }
+                 a {
+                    align-self: flex-start;
+                    font-weight: var(--font-weight-bld);
+                    color: var(--color-sunset-3);
+                    text-decoration: none;
+                }
 
-        section .project-list article p {
-            flex: 1;
-            line-height: 1.6;
-            margin-bottom: var(--spacing-sm);
-            color: var(--color-text);
-        }
+                a:hover {
+                    color: color-mix(in srgb, var(--color-sunset-3), var(--color-dark-mix, black 15%));
+                }
+            }
 
-        section .project-list article a {
-            align-self: flex-start;
-            font-weight: var(--font-weight-bld);
-            color: var(--color-sunset-3);
-            text-decoration: none;
-            transition: color 0.2s ease;
+            article:hover {
+                transform: translateX(8px);
+            }
         }
-
-        section .project-list article a:hover {
-            color: color-mix(in srgb, var(--color-sunset-3), black 15%);
-        }
-
-        section .project-list article:hover {
-            transform: translateX(8px);
-            box-shadow:
-                0 10px 20px rgba(var(--color-shadow-1, 49, 44, 66), 0.12),
-                0 4px 8px rgba(var(--color-shadow-2, 105, 87, 173), 0.18);
-        }
-
     }
 }
 
@@ -348,7 +323,7 @@
 @layer component {
     footer {
         background: var(--color-foreground-primary, #fcfcfc);
-        padding: var(--spacing-lg, 2rem);
+        padding: var(--scale-lg, 2rem);
         text-align: center;
         box-shadow:
             var(--shadow-displacement-1, 0 6px 18px)
