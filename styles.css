@@ -261,6 +261,76 @@
                 0 4px 8px rgba(var(--color-shadow-2, 105, 87, 173), 0.18);
         }
 
+        /* Horizontal project cards - list view */
+        section .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+
+        section .project-list article {
+            background: var(--color-foreground-primary, #fcfcfc);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow:
+                var(--shadow-displacement-1, 0 6px 18px)
+                rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
+                var(--shadow-displacement-2, 0 2px 4px)
+                rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        section .project-list .project-image {
+            width: 12rem;
+            min-width: 12rem;
+            background: linear-gradient(135deg, var(--color-sunset-1), var(--color-sunset-3));
+            flex-shrink: 0;
+        }
+
+        section .project-list .project-content {
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        section .project-list article h3 {
+            font-family: var(--font-display);
+            font-weight: var(--font-weight-bld);
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-text);
+        }
+
+        section .project-list article p {
+            flex: 1;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text);
+        }
+
+        section .project-list article a {
+            align-self: flex-start;
+            font-weight: var(--font-weight-bld);
+            color: var(--color-sunset-3);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        section .project-list article a:hover {
+            color: color-mix(in srgb, var(--color-sunset-3), black 15%);
+        }
+
+        section .project-list article:hover {
+            transform: translateX(8px);
+            box-shadow:
+                0 10px 20px rgba(var(--color-shadow-1, 49, 44, 66), 0.12),
+                0 4px 8px rgba(var(--color-shadow-2, 105, 87, 173), 0.18);
+        }
+
     }
 }
 
