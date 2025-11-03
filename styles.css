@@ -199,7 +199,7 @@
             }
         }
 
-        /* Highlights section - card layout */
+       /* Highlights section - card layout */
         section .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
@@ -222,10 +222,19 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        /* Card gradient "image" placeholder */
-        section .card-grid .card-image {
-            height: 8rem;
-            background: linear-gradient(120deg, var(--color-sunset-1), var(--color-sunset-3));
+        /* Card image */
+        section .card-grid picture {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            overflow: hidden;
+        }
+
+        section .card-grid picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* Card content */
@@ -260,6 +269,7 @@
                 0 10px 20px rgba(var(--color-shadow-1, 49, 44, 66), 0.12),
                 0 4px 8px rgba(var(--color-shadow-2, 105, 87, 173), 0.18);
         }
+
 
         /* Horizontal project cards - list view */
         section .project-list {
