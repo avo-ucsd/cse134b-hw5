@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap');
 
+@layer layout, base, components;
+
 :root {
     /* Main color palette */
     --color-text: #1e1d20;
     --color-sunset-1: #d64a4a;
     --color-sunset-2: #ff8c5b;
     --color-sunset-3: #715eea;
-    --color-shadow: #2e282c;
+    --color-shadow-1: 49, 44, 66;
+    --color-shadow-2: 105, 87, 173;
     --color-foreground-primary: #fcfcfc; 
     --color-background-primary: linear-gradient(180deg, #fff8f6 0%, #f5f7ff 100%);
+
+    --shadow-displacement-1: 0 6px 18px;
+    --shadow-displacement-2: 0 2px 4px;
+    --shadow-alpha-soft: 0.1;
+    --shadow-alpha-hard: 0.12;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -31,7 +39,7 @@
     }
 
     header, main, footer {
-        border: 1px solid #d2d2d2;
+        -border: 1px solid #d2d2d2;
         -padding: 8px;
         -margin: 8px;
 
@@ -99,6 +107,11 @@
         padding: var(--spacing-sm, 1rem) var(--spacing-lg, 2rem);
         align-items: center;
         justify-content: space-between;
+        box-shadow:
+            var(--shadow-displacement-1, 0 6px 18px)
+            rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
+            var(--shadow-displacement-2, 0 2px 4px)
+            rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
         
         a {
             text-decoration: none;
@@ -165,6 +178,11 @@
             background: var(--color-foreground-primary, #fcfcfc);
             margin-bottom: var(--spacing-lg, 2rem);
             padding: var(--spacing-lg, 2rem);
+            box-shadow:
+                var(--shadow-displacement-1, 0 6px 18px)
+                rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
+                var(--shadow-displacement-2, 0 2px 4px)
+                rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
 
             h2 {
                 font-family: var(--font-display);
@@ -188,6 +206,11 @@
         background: var(--color-foreground-primary, #fcfcfc);
         padding: var(--spacing-lg, 2rem);
         text-align: center;
+        box-shadow:
+            var(--shadow-displacement-1, 0 6px 18px)
+            rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
+            var(--shadow-displacement-2, 0 2px 4px)
+            rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
     }
     
 }
