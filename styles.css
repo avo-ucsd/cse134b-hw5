@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap');
 
-@layer layout, base, components;
+@layer layout, base, components, background;
 
 :root {
     /* Main color palette */
@@ -37,22 +37,6 @@
     /* Animations */
     --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     --transition-slide-right: transform 0.25s ease-out;
-}
-
-@layer debug {
-    * {
-        -border: solid 1px red;
-    }
-
-    header, main, footer {
-        -border: 1px solid #d2d2d2;
-        -padding: 8px;
-        -margin: 8px;
-
-        section {
-            -border: 1px solid #d2d2d2;
-        }
-    }
 }
 
 @layer layout {
