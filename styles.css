@@ -10,7 +10,7 @@
     --color-sunset-3: #715eea;
     --color-shadow-1: 49, 44, 66;
     --color-shadow-2: 105, 87, 173;
-    --color-foreground-primary: #fcfcfc; 
+    --color-foreground-primary: #fcfcfc;
     --color-background-primary: linear-gradient(180deg, #fff8f6 0%, #f5f7ff 100%);
 
     --shadow-displacement-1: 0 6px 18px;
@@ -158,6 +158,7 @@
             picture > img {
                 display: block;
                 margin-bottom: var(--spacing-xl, 3rem);
+                border: var(--color-sunset-3) solid 0.5rem;
                 border-radius: 50%;
                 width: 30%;
                 height: 30%;
@@ -197,6 +198,69 @@
                 margin-bottom: var(--spacing-sm, 1rem);
             }
         }
+
+        /* Highlights section - card layout */
+        section .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+
+        /* Individual cards */
+        section .card-grid article {
+            background: var(--color-foreground-primary, #fcfcfc);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow:
+                var(--shadow-displacement-1, 0 6px 18px)
+                rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
+                var(--shadow-displacement-2, 0 2px 4px)
+                rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Card gradient "image" placeholder */
+        section .card-grid .card-image {
+            height: 8rem;
+            background: linear-gradient(120deg, var(--color-sunset-1), var(--color-sunset-3));
+        }
+
+        /* Card content */
+        section .card-grid article h3 {
+            font-family: var(--font-display);
+            font-weight: var(--font-weight-bld);
+            margin: var(--spacing-md) var(--spacing-md) var(--spacing-xs);
+        }
+
+        section .card-grid article p {
+            flex: 1;
+            margin: 0 var(--spacing-md) var(--spacing-md);
+            line-height: 1.5;
+        }
+
+        section .card-grid article a {
+            align-self: flex-start;
+            margin: 0 var(--spacing-md) var(--spacing-md);
+            font-weight: var(--font-weight-bld);
+            color: var(--color-sunset-3);
+            text-decoration: none;
+        }
+
+        section .card-grid article a:hover {
+            color: color-mix(in srgb, var(--color-sunset-3), black 15%);
+        }
+
+        /* Hover lift effect */
+        section .card-grid article:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 10px 20px rgba(var(--color-shadow-1, 49, 44, 66), 0.12),
+                0 4px 8px rgba(var(--color-shadow-2, 105, 87, 173), 0.18);
+        }
+
     }
 }
 
@@ -216,7 +280,7 @@
 }
 
 body {
-    background: var(--color-background-primary, white);
+    background: var(--color-background-primary, linear-gradient(180deg, #fff8f6 0%, #f5f7ff 100%));
 }
 
 /********* Media Queries: Steps *********/
