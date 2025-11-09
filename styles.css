@@ -168,9 +168,9 @@
 
         nav {
             ul {
+                list-style: none;
                 display: flex;
                 flex-wrap: wrap;
-                list-style: none;
                 gap: var(--scale-sm, 1rem);
                 
                 li {
@@ -450,53 +450,72 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
+        gap: var(--scale-lg, 2rem);
         background: var(--color-foreground-primary, #fcfcfc);
         padding: var(--scale-lg, 2rem);
-        text-align: center;
         box-shadow:
             var(--shadow-displacement-up-1, 0 -6px 18px)
             rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
             var(--shadow-displacement-up-2, 0 -2px 4px)
             rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
 
-        div {
-            margin: auto;
-
-            button#theme-toggle {
-                font: inherit;
-                color: inherit;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                background: none;
-                border: none;
-                cursor: pointer;
-                transition: transform 0.2s ease;
-                padding: 0.5rem;
-                border-radius: 0.5rem;
-            }
-            
-            button#theme-toggle:hover {
-                transform: scale(1.05);
-            }
-
-            #theme-icon {
-                width: 24px;
-                height: 24px;
-                position: relative;
-                display: block;
-            }
-
-            #sun-rays,
-            #sun,
-            #moon {
-                transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                            opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-                transform-origin: center;
-            }
+        h1 {
+            font-family: var(--font-display);
+            font-weight: var(--font-weight-bld, 600);
+            background-image: linear-gradient(90deg, var(--color-sunset-1), var(--color-sunset-3));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        
+        h2 { 
+            font-size: var(--scale-sm, 1rem);
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--scale-md, 1rem);
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: var(--scale-xs, 0.5rem);
+
+                svg, button {
+                    display: block;
+                    font: inherit;
+                    color: inherit;
+                    gap: var(--scale-xs, 0.5rem);
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    transition: transform 0.2s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    } 
+                }
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    gap: var(--scale-sm, 1rem);
+                }
+
+                #theme-icon {
+                    width: 24px;
+                    height: 24px;
+                    position: relative;
+                    display: block;
+                }
+
+                #sun-rays, #sun, #moon {
+                    transform-origin: center;
+                    transition: var(--transition-theme);
+                }
+            }
+        }
     }
 
     #theme-icon {
@@ -514,7 +533,6 @@
         transform-origin: center;
         transition: var(--transition-theme);
     }
-
 }
 
 /* Graph-like background */
@@ -806,7 +824,6 @@ body[data-page="experience"] {
     }
 }
 
-/* Re-applies Dark Theme variables (matches the OS preference block) */
 [data-theme="dark"] {
     --color-text: #e8e6f0;
     --color-sunset-1: #ff6b6b;      
@@ -860,7 +877,6 @@ body[data-page="experience"] {
     }
 }
 
-/* Re-applies Light Theme variables (matches the default :root block) */
 [data-theme="light"] {
     --color-text: #1e1d20;
     --color-sunset-1: #d64a4a;
