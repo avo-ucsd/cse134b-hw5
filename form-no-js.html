@@ -54,7 +54,11 @@
                         </label>
                         <input type="text" 
                                name="contact-name" 
-                               id="contact-name" 
+                               id="contact-name"
+                               minlength="2"
+                               maxlength="100"
+                               pattern="[A-Za-z\s\-']+"
+                               title="Please use only letters, spaces, hyphens, and apostrophes"
                                placeholder="e.g. First Last"
                                autocomplete="off" 
                                required>
@@ -68,7 +72,9 @@
                         </label>
                         <input type="email"  
                                name="contact-email" 
-                               id="contact-email" 
+                               id="contact-email"
+                               minlength="2"
+                               maxlength="255"
                                placeholder="e.g. example@email.com" 
                                required>
                         <span aria-live="polite">Please provide a valid email.</span>
@@ -82,9 +88,11 @@
                     </label>
                     <input type="text" 
                            name="contact-subject" 
-                           id="contact-subject" 
-                           rows="5" 
-                           cols="64" 
+                           id="contact-subject"
+                           minlength="2"
+                           maxlength="200"
+                           pattern="[A-Za-z\s\-']+"
+                           title="Please use only letters, spaces, hyphens, and apostrophes"
                            placeholder="e.g. Let's work together!"
                            autocomplete="off"
                            required>
@@ -99,8 +107,8 @@
                     <textarea type="text" 
                               name="contact-message" 
                               id="contact-message" 
-                              rows="5" 
-                              cols="64" 
+                              minlength="10"
+                              pattern="[A-Za-z\s\-']+"
                               placeholder="e.g. Hello, world!" 
                               required></textarea>
                     <span aria-live="polite">Please provide a message.</span>
