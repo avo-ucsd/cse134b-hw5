@@ -857,6 +857,22 @@ body[data-page="contact"] {
         padding: var(--scale-md);
         font-size: 0.9rem;
     }
+
+    body[data-page="contact"] {
+        form {
+            padding: var(--scale-md, 1.5rem);
+            
+            > div {
+                grid-template-columns: 1fr;
+                gap: var(--scale-sm, 1rem);
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: var(--scale-md, 1.5rem);
+            }
+        }
+    }
 }
 
 /* ===== Medium Screens: tablets & small laptops ===== */
