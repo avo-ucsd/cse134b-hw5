@@ -42,29 +42,41 @@
         <section>
             <h2>Contact</h2>
             <p>I'd be more than happy to chat about anything! Whether it be about myself, hobbies, projects, collaborations, or opportunities, let's connect!</p>
-            <p>Want to reach out? The best way to contact me would be to send me an emai via the form below. I'm also on LinkedIn and GitHub.</p>
-            <ul>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/ashley-v-abb6b824b/">My LinkedIn</a></li>
-                <li>GitHub: <a href="https://github.com/TeaFive">My GitHub</a></li>
-            </ul>
+            <p>Want to reach out? The best way to contact me would be to send me an email via the form below. I'm also on <a href="https://www.linkedin.com/in/ashley-v-abb6b824b/">LinkedIn</a> and <a href="https://github.com/TeaFive">GitHub</a>.</p>
 
+            <h3>Send a message</h3>
             <form>
-                <form-field>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" required>
-                    <br>
-                </form-field>
+                <div>
+                    <form-field>
+                        <label for="name">Name</label>
+                        <input type="text" 
+                               name="name" 
+                               id="name" 
+                               placeholder="e.g. First Last" 
+                               required>
+                    </form-field>
 
-                <form-field>
-                    <label for="email">Email</label>
-                    <input type="email" pattern="email" name="email" id="email" required>
-                    <br>
-                </form-field>
+                    <form-field>
+                        <label for="email">Email</label>
+                        <input type="email" 
+                               pattern="email" 
+                               name="email" 
+                               id="email" 
+                               placeholder="e.g. example@email.com" 
+                               required>
+                    </form-field>
+                </div>
 
                 <form-field>
                     <label for="message">Message</label>
-                    <input type="text" name="message" id="message" required>
-                    <br>
+                    <textarea type="text" 
+                              name="message" 
+                              id="message" 
+                              rows="5" 
+                              cols="64" 
+                              placeholder="e.g. Hello, world!" 
+                              required>
+                    </textarea>
                 </form-field>
 
                 <input type="submit">

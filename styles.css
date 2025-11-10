@@ -323,10 +323,9 @@
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
-                margin-bottom: var(--scale-md, 1.5rem);
             }
 
-            p, ul {
+            h2, h3, p, ul {
                 margin-bottom: var(--scale-sm, 1rem);
             }
         }
@@ -636,15 +635,126 @@ body[data-page="experience"] {
     }
 }
 
-body[data-page="contact"] {
+/* body[data-page="contact"] {
     form {
-        display: table;
+        div {
+            display: flex;
+            gap: var(--scale-lg, 2rem);
+        }
 
         form-field {
-            display: table-row;
-
             label {
-                display: table-cell;
+                display: block;
+            }
+
+            input, textarea {
+                color: black;
+                font-family: var(--font-body);
+                padding: var(--scale-xs, 0.5rem);
+            }
+        }
+
+        input[type="submit"] { 
+            display: block;
+        }
+    }
+} */
+
+body[data-page="contact"] {
+    form {
+        background: color-mix(in srgb, var(--color-foreground-primary) 40%, transparent);
+        padding: var(--scale-lg, 2rem);
+        border-radius: var(--scale-sm, 1rem);
+        border: 1px solid var(--color-foreground-border);
+        margin-top: var(--scale-md, 1.5rem);
+        
+        > div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--scale-md, 1.5rem);
+            margin-bottom: var(--scale-md, 1.5rem);
+        }
+
+        form-field {
+            display: flex;
+            flex-direction: column;
+            gap: var(--scale-xs, 0.5rem);
+            
+            label {
+                display: block;
+                font-weight: var(--font-weight-bld, 600);
+                color: var(--color-text);
+                font-size: var(--scale-sm, 1rem);
+            }
+
+            input, textarea {
+                width: 100%;
+                padding: var(--scale-sm, 1rem);
+                font-family: var(--font-body);
+                font-size: var(--scale-sm, 1rem);
+                color: var(--color-text);
+                background: var(--color-foreground-primary);
+                border: 2px solid var(--color-foreground-border);
+                border-radius: var(--scale-xs, 0.5rem);
+                transition: all 0.3s ease;
+                outline: none;
+                box-sizing: border-box;
+                
+                &::placeholder {
+                    color: color-mix(in srgb, var(--color-text) 40%, transparent);
+                }
+
+                &:hover {
+                    border-color: color-mix(in srgb, var(--color-sunset-3) 50%, var(--color-foreground-border));
+                }
+                
+                &:focus {
+                    border-color: var(--color-sunset-3);
+                    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-sunset-3) 15%, transparent);
+                }
+            }
+
+            textarea {
+                resize: vertical;
+                min-height: 120px;
+                font-family: var(--font-body);
+            }
+        }
+
+        > form-field {
+            margin-bottom: var(--scale-md, 1.5rem);
+        }
+
+        input[type="submit"] {
+            display: inline-block;
+            padding: var(--scale-sm, 1rem) var(--scale-lg, 2rem);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: var(--font-weight-bld, 600);
+            color: white;
+            background: linear-gradient(135deg, 
+                var(--color-sunset-1), 
+                var(--color-sunset-3));
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 4px 12px rgba(var(--color-shadow-2), 0.3),
+                0 2px 4px rgba(var(--color-shadow-1), 0.2);
+            
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow:
+                    0 6px 16px rgba(var(--color-shadow-2), 0.4),
+                    0 3px 6px rgba(var(--color-shadow-1), 0.25);
+            }
+            
+            &:active {
+                transform: translateY(0);
+                box-shadow:
+                    0 2px 8px rgba(var(--color-shadow-2), 0.3),
+                    0 1px 2px rgba(var(--color-shadow-1), 0.2);
             }
         }
     }
