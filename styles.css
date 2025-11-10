@@ -634,29 +634,6 @@ body[data-page="experience"] {
         }
     }
 }
-    form {
-        div {
-            display: flex;
-            gap: var(--scale-lg, 2rem);
-        }
-
-        form-field {
-            label {
-                display: block;
-            }
-
-            input, textarea {
-                color: black;
-                font-family: var(--font-body);
-                padding: var(--scale-xs, 0.5rem);
-            }
-        }
-
-        input[type="submit"] { 
-            display: block;
-        }
-    }
-} */
 
 body[data-page="contact"] {
     form {
