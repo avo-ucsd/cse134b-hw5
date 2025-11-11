@@ -648,7 +648,7 @@ body[data-page="contact"] {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--scale-md, 1.5rem);
-            margin-bottom: var(--scale-md, 1.5rem);
+            margin-bottom: var(--scale-sm, 1rem);
         }
 
         form-field {
@@ -693,6 +693,28 @@ body[data-page="contact"] {
                     border-color: var(--color-sunset-3);
                     box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-sunset-3) 15%, transparent);
                 }
+
+                &:user-invalid {
+                    border: 1px solid red;
+                    background-color: color-mix(in srgb,
+                                        var(--color-foreground-primary) 95%,
+                                            red);
+
+                    &~span[aria-live='polite'] {
+                        visibility: visible;
+                    }
+                }
+            }
+
+            input {
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: var(--color-text);
+                    transition: background-color 5000s ease-in-out 0s;
+                }
             }
 
             textarea {
@@ -709,33 +731,15 @@ body[data-page="contact"] {
             }
 
             span[aria-live='polite'] {
+                display: block;
                 color: red;
-                display: none;
-            }
-
-            input:-webkit-autofill,
-            input:-webkit-autofill:hover,
-            input:-webkit-autofill:focus,
-            input:-webkit-autofill:active {
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: var(--color-text);
-                transition: background-color 5000s ease-in-out 0s;
-            }
-
-            input:user-invalid {
-                border: 1px solid red;
-                background-color: color-mix(in srgb,
-                                      var(--color-foreground-primary) 95%, 
-                                    red);
-
-                &~span[aria-live='polite'] {
-                    display: block;
-                }
+                -display: none;
+                visibility: hidden;
             }
         }
 
         > form-field {
-            margin-bottom: var(--scale-md, 1.5rem);
+            margin-bottom: var(--scale-sm, 1rem);
         }
 
         input[type="submit"] {
@@ -772,12 +776,24 @@ body[data-page="contact"] {
         }
 
         output {
-            display: block;
+            display: none;
             margin: var(--scale-sm, 1rem) 0
                     var(--scale-sm, 1rem) 0;
+            padding: var(--scale-sm, 1rem);
+            border-radius: var(--scale-sm, 1rem);
 
             &#contact-error-output {
-                -border: 1px solid red;
+                border: 1px solid red;
+                background-color: color-mix(in srgb,
+                                        var(--color-foreground-primary) 90%, 
+                                            red);
+            }
+
+            &#contact-info-output {
+                border: 1px solid var(--color-sunset-3);
+                background-color: color-mix(in srgb,
+                                        var(--color-foreground-primary) 90%, 
+                                            var(--color-sunset-3));    
             }
         }
     }
