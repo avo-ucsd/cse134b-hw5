@@ -849,6 +849,19 @@ body[data-page="contact"] {
 /********* Screen Media Queries *********/
 /* ===== Small Screens: mobile phones ===== */
 @media (max-width: 42.5em) {
+    body {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    header, main, footer {
+        grid-column: 1;
+
+        noscript {
+            border: none;
+        }
+    }
+
     header {
         top: 0;
         padding: var(--scale-sm) var(--scale-md);
