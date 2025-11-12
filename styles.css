@@ -265,6 +265,17 @@
             border-style: solid;
         }
 
+        noscript {
+            display: block;
+            background: color-mix(in srgb, var(--color-sunset-1) 10%, var(--color-foreground-primary));
+            border-left: 4px solid var(--color-sunset-1);
+            color: var(--color-text);
+            padding: var(--scale-md, 1.5rem);
+            border-radius: var(--scale-xs, 0.5rem);
+            margin-bottom: var(--scale-lg, 2rem);
+            font-weight: var(--font-weight-reg, 400);
+        }
+
         #greeting {
             min-height: 30dvh;
 
