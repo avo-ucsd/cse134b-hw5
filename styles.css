@@ -29,8 +29,8 @@
                                     );
     --color-background-graph-wash-2: repeating-linear-gradient(
                                         90deg,
-                                        rgba(0, 0, 0, 0.03) 0px,
-                                        rgba(0, 0, 0, 0.03) 1px,
+                                        rgba(0, 0, 0, 0.05) 0px,
+                                        rgba(0, 0, 0, 0.05) 1px,
                                         transparent 1px,
                                         transparent 24px
                                     );
@@ -829,24 +829,6 @@ body[data-page="contact"] {
     }
 }
 
-@keyframes wiggle {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(-5deg) scale(1.05);
-    }
-
-    75% {
-        transform: rotate(5deg) scale(1.05);
-    }
-    
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
 @view-transition {
     navigation: auto;
 }
@@ -1040,15 +1022,15 @@ body[data-page="contact"] {
                                          rgba(10, 8, 19, 0.9) 100%);
         --color-background-graph-wash-1: repeating-linear-gradient(
                                             0deg,
-                                            rgba(255, 255, 255, 0.20) 0px,
-                                            rgba(255, 255, 255, 0.20) 1px,
+                                            rgba(255, 255, 255, 0.31) 0px,
+                                            rgba(255, 255, 255, 0.31) 1px,
                                             transparent 1px,
                                             transparent 24px
                                         );
         --color-background-graph-wash-2: repeating-linear-gradient(
                                             90deg,
-                                            rgba(255, 255, 255, 0.20) 0px,
-                                            rgba(255, 255, 255, 0.20) 1px,
+                                            rgba(255, 255, 255, 0.36) 0px,
+                                            rgba(255, 255, 255, 0.36) 1px,
                                             transparent 1px,
                                             transparent 24px
                                         );   
@@ -1073,15 +1055,15 @@ body[data-page="contact"] {
                                          rgba(10, 8, 19, 0.9) 100%);
     --color-background-graph-wash-1: repeating-linear-gradient(
                                             0deg,
-                                            rgba(255, 255, 255, 0.20) 0px,
-                                            rgba(255, 255, 255, 0.20) 1px,
+                                            rgba(255, 255, 255, 0.31) 0px,
+                                            rgba(255, 255, 255, 0.31) 1px,
                                             transparent 1px,
                                             transparent 24px
                                         );
     --color-background-graph-wash-2: repeating-linear-gradient(
                                             90deg,
-                                            rgba(255, 255, 255, 0.20) 0px,
-                                            rgba(255, 255, 255, 0.20) 1px,
+                                            rgba(255, 255, 255, 0.36) 0px,
+                                            rgba(255, 255, 255, 0.36) 1px,
                                             transparent 1px,
                                             transparent 24px
                                         );
@@ -1127,8 +1109,8 @@ body[data-page="contact"] {
                                     );
     --color-background-graph-wash-2: repeating-linear-gradient(
                                         90deg,
-                                        rgba(0, 0, 0, 0.03) 0px,
-                                        rgba(0, 0, 0, 0.03) 1px,
+                                        rgba(0, 0, 0, 0.05) 0px,
+                                        rgba(0, 0, 0, 0.05) 1px,
                                         transparent 1px,
                                         transparent 24px
                                     );
