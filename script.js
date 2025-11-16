@@ -40,22 +40,41 @@ function init() {
   // (1) Name
   const nameInput = document.getElementById('contact-name');
   nameInput.addEventListener('change', (event) => {
-    if (!nameInput.checkValidity()) {
-      const nameValidity = nameInput.validity;
+    const nameValidity = nameInput.validity;
 
-      if (nameValidity.valueMissing) {
-        nameInput.setCustomValidity('Please enter a name.');
-      } else if (nameValidity.tooShort) {
-        nameInput.setCustomValidity('Name must be at least 2 characters.');
-      } else if (nameValidity.tooLong) {
-        nameInput.setCustomValidity('Name must be at most 100 characters.');
-      } else {
-        nameInput.setCustomValidity('');
-      }
+    if (nameValidity.valueMissing) {
+      nameInput.setCustomValidity('Please enter a name.');
+    } else if (nameValidity.tooShort) {
+      nameInput.setCustomValidity('Name must be at least 2 characters.');
+    } else if (nameValidity.tooLong) {
+      nameInput.setCustomValidity('Name must be at most 100 characters.');
     } else {
       nameInput.setCustomValidity('');
     }
   });
+
+  // (2) Email
+  const emailInput = document.getElementById('contact-email');
+  emailInput.addEventListener('change', (event) => {
+    const emailValidity = emailInput.validity;
+    const emailPattern = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?(?:\.[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?)+$/i;;
+
+    if (emailValidity.valueMissing) {
+      emailInput.setCustomValidity('Please enter an email.');
+    } else if (emailValidity.typeMismatch) {
+      emailInput.setCustomValidity('Please enter in a valid email address.');
+    } else if (emailValidity.tooShort) {
+      emailInput.setCustomValidity('Email must be at least 2 characters.');
+    } else if (emailValidity.tooLong) {
+      emailInput.setCustomValidity('Email must be at most 255 characters.');
+    } else if (!emailPattern.test(emailInput.value)) {
+      emailInput.setCustomValidity('Email must include a domain e.g. \"example@email.com\".');
+    } else {
+      emailInput.setCustomValidity('');
+    }
+  });
+
+  // (3) Subject
 }
 
 // function init() {
