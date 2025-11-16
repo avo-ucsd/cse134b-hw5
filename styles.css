@@ -760,26 +760,35 @@ body[data-page="contact"] {
                 white-space: pre-wrap;
                 field-sizing: content;
             }
-
-            output {
-                display: block;
-                font-size: 0.9rem;
-
-                &[data-output="error"] {
-                    color: red;
-                    visibility: hidden;
-                }
-                
-                &[data-output="info"] {
-                    color: color-mix(in srgb, 
-                                     var(--color-text) 30%, 
-                                     transparent);
-                }
-            }
         }
 
         > form-field {
             margin-bottom: var(--scale-sm, 1rem);
+        }
+
+        output {
+            border-radius: var(--scale-sm, 1rem);
+            padding: var(--scale-sm, 1rem);
+            margin-bottom: var(--scale-sm, 1rem);
+
+            &[data-output="error"] {
+                display: block;
+                color: red;
+                border: 1px solid red;
+                background-color: color-mix(in srgb, 
+                                    red 10%, 
+                                    transparent);
+                visibility: hidden;
+            }
+            
+            &[data-output="info"] {
+                display: none;
+                color: skyblue;
+                border: 1px solid skyblue;
+                background-color: color-mix(in srgb, 
+                                    skyblue 10%, 
+                                    transparent);
+            }
         }
 
         input[type="submit"] {
