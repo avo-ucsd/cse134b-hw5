@@ -37,16 +37,23 @@ function init() {
   }
 
   // Form validation
+  // (1) Name
   const nameInput = document.getElementById('contact-name');
-  nameInput.addEventListener('input', (event) => {
-    const lastCharacter = nameInput.value[value.length - 1];
-
-    if (lastCharacter) {
-
-    }
-
+  nameInput.addEventListener('change', (event) => {
     if (!nameInput.checkValidity()) {
+      const nameValidity = nameInput.validity;
+
+      if (nameValidity.valueMissing) {
+        nameInput.setCustomValidity('Please enter a name.');
+      } else if (nameValidity.tooShort) {
+        nameInput.setCustomValidity('Name must be at least 2 characters.');
+      } else if (nameValidity.tooLong) {
+        nameInput.setCustomValidity('Name must be at most 100 characters.');
+      } else {
+        nameInput.setCustomValidity('');
+      }
     } else {
+      nameInput.setCustomValidity('');
     }
   });
 }
