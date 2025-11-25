@@ -406,7 +406,7 @@
             gap: var(--scale-lg, 2rem);
             margin-top: var(--scale-md, 1.5rem);
 
-            article {
+            article, project-card {
                 padding: var(--scale-md, 1.5rem);
                 display: flex;
                 flex-direction: column;
