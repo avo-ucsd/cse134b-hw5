@@ -408,8 +408,9 @@
 
             article, project-card {
                 padding: var(--scale-md, 1.5rem);
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: 7.5rem 1fr;
+                grid-template-rows: 1fr;
                 background: var(--color-foreground-primary, #fcfcfc);
                 border-radius: var(--scale-sm, 1rem);
                 overflow: hidden;
@@ -421,29 +422,54 @@
                 align-items: stretch;
                 transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-                h3 {
-                    font-family: var(--font-display);
-                    font-weight: var(--font-weight-bld, 600);
-                    margin-bottom: var(--scale-xs, 0.5rem);
-                    color: var(--color-text, #1e1d20);
+                picture {
+                    grid-column: 1;
+                    grid-row: 1 / -1;
+                    width: 7.5rem;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img { 
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                    }
                 }
 
-                p {
-                    flex: 1;
-                    line-height: 1.6;
-                    margin-bottom: var(--scale-sm, 1rem);
-                    color: var(--color-text, #1e1d20);
-                }
+                div {
+                    grid-column: 2;
+                    grid-row: 1 / -1;
+                    padding: 0 0 0 var(--scale-md, 1.5rem);
+                    display: flex;
+                    flex-direction: column;
 
-                 a {
-                    align-self: flex-start;
-                    font-weight: var(--font-weight-bld, 600);
-                    color: var(--color-sunset-3, #715eea);
-                    text-decoration: none;
-                }
+                    h3 {
+                        font-family: var(--font-display);
+                        font-weight: var(--font-weight-bld, 600);
+                        margin-bottom: var(--scale-xs, 0.5rem);
+                        color: var(--color-text, #1e1d20);
+                    }
 
-                a:hover {
-                    color: oklch(from var(--color-sunset-3, #715eea) var(--color-link-hover, calc(l - 0.25) c h));
+                    p {
+                        flex: 1;
+                        line-height: 1.6;
+                        margin-bottom: var(--scale-sm, 1rem);
+                        color: var(--color-text, #1e1d20);
+                    }
+
+                    a {
+                        align-self: flex-start;
+                        font-weight: var(--font-weight-bld, 600);
+                        color: var(--color-sunset-3, #715eea);
+                        text-decoration: none;
+                    }
+
+                    a:hover {
+                        color: oklch(from var(--color-sunset-3, #715eea) var(--color-link-hover, calc(l - 0.25) c h));
+                    }
                 }
             }
 
