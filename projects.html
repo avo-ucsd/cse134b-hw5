@@ -40,6 +40,36 @@
 
         <section>
             <h2>Projects</h2>
+
+            <!-- Inline styling for ease as I plan to remove this in the future -->
+            <style>
+                #hw5-data-loading {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 4rem;
+
+                    button {
+                        display: inline-block;
+                        padding: 1rem;
+                        font-size: 1.5rem;
+                        background-color: #d64a4a;
+                        color: #ffffff;
+                        border: none;
+                        border-radius: 1rem;
+
+                        &:active {
+                            background-color: #7e1f1f;
+                            transform: translate(0, 2px);
+                        }
+                    }
+                }
+            </style>
+            <div id="hw5-data-loading">
+                <button>Load Local</button>
+                <button>Load Remote</button>
+            </div>
+            
             <div class="project-list">
                 <project-card>
                     <picture>
