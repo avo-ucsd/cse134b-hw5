@@ -981,6 +981,18 @@ body[data-page="contact"] {
             }
         }
     }
+
+    .project-list project-card {
+        grid-template-columns: 1fr;
+        
+        picture {
+            display: none;
+        }
+        
+        div {
+            padding: 0;
+        }
+    }
 }
 
 /* ===== Medium Screens: tablets & small laptops ===== */
