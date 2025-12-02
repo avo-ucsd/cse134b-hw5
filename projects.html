@@ -6,7 +6,9 @@
     <title>Ashley Vo - Portfolio</title>
     <link rel="icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="./styles.css">
+    <script src="ProjectCard.js"></script>
     <script src="script.js"></script>
+    <script src="cardCreation.js"></script>
 </head>
 <body>
     <header>
@@ -70,120 +72,8 @@
                 <button>Load Remote</button>
             </div>
             
-            <div class="project-list">
-                <project-card>
-                    <picture>
-                         <source
-                            srcset="./images/portrait1-300.jpg 350w,
-                                    ./images/portrait1-600.jpg 600w,
-                                    ./images/portrait1-900.jpg 900w"
-                            sizes="(max-width: 480px) 90vw,
-                                (max-width: 1024px) 50vw,
-                                33vw"
-                            type="image/png">
-                        <img src="./portrait1-600.jpg" 
-                             alt="A picture of Ashley, the site owner, to represent her personal site.">
-                    </picture>
-                    <div>
-                        <h3>Personal Portfolio Site</h3>
-
-                        <p>
-                            This is the website you're looking at now! It serves
-                            as one-stop shop for my development journey as well
-                            as being a playground for my learning in web 
-                            development.
-                        </p>
-                        <a class="project-unavailable">
-                            Sorry, there isn't a repository to share right now.
-                        </a>
-                    </div>
-                </project-card>
-
-                <project-card>
-                    <picture>
-                         <source
-                            srcset="./images/project/project_letMeCook-350.png 350w,
-                                    ./images/project/project_letMeCook-600.png 600w,
-                                    ./images/project/project_letMeCook-900.png 900w"
-                            sizes="(max-width: 480px) 90vw,
-                                (max-width: 1024px) 50vw,
-                                33vw"
-                            type="image/png">
-                        <img src="./images/project_letMeCook-600.png" 
-                             alt="Let Me Cook app icon.">
-                    </picture>
-                    <div>
-                        <h3>Let Me Cook</h3>
-
-                        <p>
-                            A recipe web app to create, store, and view personal
-                            recipes. I helped lead our quarter long project for
-                            CSE 110: Software Engineering at the University of 
-                            California, San Diego.
-                        </p>
-                        <a href="https://github.com/cse110-sp25-group8/final-project">
-                            View more on GitHub
-                        </a>
-                    </div>
-                </project-card>
-
-                <project-card>
-                    <picture>
-                         <source
-                            srcset="./images/project/project_montecarlo-350.png 350w,
-                                    ./images/project/project_montecarlo-600.png 600w,
-                                    ./images/project/project_montecarlo-900.png 900w"
-                            sizes="(max-width: 480px) 90vw,
-                                (max-width: 1024px) 50vw,
-                                33vw"
-                            type="image/png">
-                        <img src="./images/project_montecarlo-600.png" 
-                             alt="A graph of a Monte Carlo experiment distribution.">
-                    </picture>
-                    <div>
-                        <h3>Pokemon Cards Monte Carlo Analysis</h3>
-
-                        <p>
-                            An R-based Monte Carlo simulation of McDonald's 2025
-                            Pokemon Happy Meal collaboration to model randomized
-                            distribution systems, analyze expected outcomes, 
-                            identify bottlenecks, and visualize distributions 
-                            with ggplot2.
-                        </p>
-                        <a href="https://github.com/TeaFive/2025-McDonalds-Pokemon-Cards-Monte-Carlo">
-                            View more on GitHub
-                        </a>
-                    </div>
-                </project-card>
-
-                <project-card>
-                    <picture>
-                         <source
-                            srcset="./images/project/project_discordBot-350.png 350w,
-                                    ./images/project/project_discordBot-600.png 600w,
-                                    ./images/project/project_discordBot-900.png 900w"
-                            sizes="(max-width: 480px) 90vw,
-                                (max-width: 1024px) 50vw,
-                                33vw"
-                            type="image/png">
-                        <img src="./images/project_discordBot-600.png" 
-                             alt="A graph of a Monte Carlo experiment distribution.">
-                    </picture>
-                    <div>
-                        <h3>Community Discord Bot</h3>
-
-                        <p>
-                            A custom community bot to handle fun participation events 
-                            and hidden mini-games for a Discord server. My contributions 
-                            primarily were grammatical and bug fixes.
-                        </p>
-
-                        <a class="project-unavailable">
-                            No repository available as the bot owner is keeping it private.
-                        </a>
-                    </div>
-                </project-card>
-            </div>
+            <div class="project-list"></div>
+            
             </section>
     </main>
 
