@@ -406,7 +406,7 @@
             gap: var(--scale-lg, 2rem);
             margin-top: var(--scale-md, 1.5rem);
 
-            article, project-card {
+            project-card {
                 padding: var(--scale-md, 1.5rem);
                 display: grid;
                 grid-template-columns: 7.5rem 1fr;
@@ -471,10 +471,14 @@
                         color: oklch(from var(--color-sunset-3, #715eea) var(--color-link-hover, calc(l - 0.25) c h));
                     }
                 }
-            }
 
-            article:hover {
-                transform: translateX(8px);
+                &:hover {
+                    transform: translateX(8px);
+                }
+
+                .project-unavailable {
+                    color: var(--color-text, #1e1d20);
+                }
             }
         }
     }
