@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const loadRemoteBtn = document.querySelector('#hw5-data-loading > button:nth-child(2)');
 
     loadLocalBtn.addEventListener('click', loadLocal);
+    loadRemoteBtn.addEventListener('click', loadRemote);
 });
 
 function fillStorage() {
@@ -52,6 +53,23 @@ function loadLocal() {
     const storageData = localStorage.getItem(key);
     const projects = JSON.parse(storageData);
 
+    renderCards(projects);
+}
+
+async function loadRemote() {
+    // Fetch data first
+    const REMOTE_DB = 'https://my-json-server.typicode.com/avo-ucsd/cse134b-hw5-db/projects';
+    const response = await fetch(REMOTE_DB);
+    const projects = await response.json();
+
+    // Data is ready ==> clear
+    const projectList = document.querySelector('.project-list');
+    projectList.innerHTML = '';
+
+    renderCards(projects);
+}
+
+function renderCards(projects) {
     for (const projectData of projects) {
         const card = document.createElement('project-card');
         card.data = projectData;
