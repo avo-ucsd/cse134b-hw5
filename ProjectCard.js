@@ -106,7 +106,6 @@ class ProjectCard extends HTMLElement {
 
             a.project-unavailable {
                 color: var(--color-text, #1e1d20);
-                cursor: default;
             }
 
             @media (max-width: 42.5em) { 
@@ -155,12 +154,11 @@ class ProjectCard extends HTMLElement {
         const contentLink = document.createElement('a');
         if (link !== '') {
             contentLink.href = link;
-            contentLink.textContent = linkText;
         } else {
             contentLink.removeAttribute('href');
-            contentLink.textContent = linkText;
             contentLink.className = 'project-unavailable';
         }
+        contentLink.textContent = linkText;
 
         textContent.appendChild(contentTitle);
         textContent.appendChild(contentDescription);
