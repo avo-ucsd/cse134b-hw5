@@ -1,7 +1,9 @@
 const key = 'projects';
 
 window.addEventListener('DOMContentLoaded', async () => { 
-    fillStorage();
+    if (!localStorage.getItem('projects')) {
+        fillStorage();
+    }
 
     const loadLocalBtn = document.querySelector('#hw5-data-loading > button');
     const loadRemoteBtn = document.querySelector('#hw5-data-loading > button:nth-child(2)');
