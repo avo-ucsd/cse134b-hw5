@@ -33,6 +33,12 @@ class ProjectCard extends HTMLElement {
 
         const styleElement = document.createElement('style');
         styleElement.textContent = `
+            /* Reset */
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
             :host {
                 padding: var(--scale-md, 1.5rem);
                 display: grid;

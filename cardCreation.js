@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', async () => { 
-    // Create the element
     const card = document.createElement('project-card');
 
     card.data = {
