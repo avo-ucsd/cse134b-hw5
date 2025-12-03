@@ -23,9 +23,8 @@ class ProjectCard extends HTMLElement {
             imageSizes = [],
             title = 'Untitled Project',
             description = 'No description available.',
-            link = '#',
-            linkText = 'View more',
-            linkAvailable = true
+            link = '',
+            linkText = 'View more'
         } = this._data;
 
         // Clear shadow root before rendering
@@ -105,7 +104,7 @@ class ProjectCard extends HTMLElement {
                 color: oklch(from var(--color-sunset-3, #715eea) calc(l - 0.25) c h);
             }
 
-            .project-unavailable {
+            a.project-unavailable {
                 color: var(--color-text, #1e1d20);
                 cursor: default;
             }
@@ -154,12 +153,13 @@ class ProjectCard extends HTMLElement {
         contentDescription.textContent = description;
         
         const contentLink = document.createElement('a');
-        if (linkAvailable) {
+        if (link !== '') {
             contentLink.href = link;
             contentLink.textContent = linkText;
         } else {
-            contentLink.className = 'project-unavailable';
+            contentLink.removeAttribute('href');
             contentLink.textContent = linkText;
+            contentLink.className = 'project-unavailable';
         }
 
         textContent.appendChild(contentTitle);

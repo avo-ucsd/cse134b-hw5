@@ -44,6 +44,11 @@ function fillStorage() {
 }
 
 function loadLocal() {
+    // Clear first
+    const projectList = document.querySelector('.project-list');
+    projectList.innerHTML = '';
+
+    // Load
     const storageData = localStorage.getItem(key);
     const projects = JSON.parse(storageData);
 

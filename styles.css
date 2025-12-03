@@ -475,10 +475,6 @@
                 &:hover {
                     transform: translateX(8px);
                 }
-
-                .project-unavailable {
-                    color: var(--color-text, #1e1d20);
-                }
             }
         }
     }
