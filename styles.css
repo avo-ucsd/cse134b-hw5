@@ -713,6 +713,15 @@ body[data-page="experience"] {
                     top: 0;
                 }
 
+                time {
+                    display: block;
+                    color: var(--color-sunset-3, #715eea);
+                    font-family: var(--font-display);
+                    font-weight: var(--font-weight-bld, 600);
+                    font-size: 1.1rem;
+                    margin-bottom: var(--scale-xs, 0.5rem);
+                }
+
                 h4 {
                     background: none;
                     -webkit-text-fill-color: initial;
@@ -720,16 +729,7 @@ body[data-page="experience"] {
                     margin: 0 0 var(--scale-xs, 0.5rem);
                     font-weight: var(--font-weight-bld, 600);
                     font-family: var(--font-display);
-                    font-size: 1.1rem;
-                }
-
-                time {
-                    display: block;
-                    color: color-mix(in srgb, var(--color-text, #1e1d20) 70%, transparent);
-                    font-family: var(--font-display);
-                    font-weight: var(--font-weight-reg, 400);
-                    font-size: 0.9rem;
-                    margin-bottom: var(--scale-xs, 0.5rem);
+                    font-size: var(--scale-sm, 1rem);
                 }
 
                 p {
