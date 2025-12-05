@@ -311,7 +311,7 @@
             }
         }
 
-        section {
+        > section {
             background: var(--color-foreground-primary, #fcfcfc);
             margin-bottom: var(--scale-lg, 2rem);
             padding: var(--scale-lg, 2rem);
@@ -383,7 +383,7 @@
                 }
 
                 a {
-                    margin: 0 var(--scale-md, 1.5rem) var(--scale-md, 1.5rem);
+                    margin: auto var(--scale-md, 1.5rem) var(--scale-md, 1.5rem);
                 }
             }
 
@@ -833,7 +833,7 @@ body[data-page="experience"] {
         max-height: 400px;
     }
 
-    main section {
+    main > section {
         padding: var(--scale-md);
         margin-bottom: var(--scale-md);
     }
@@ -910,7 +910,7 @@ body[data-page="experience"] {
         max-width: 250px;
     }
 
-    main section {
+    main > section {
         padding: var(--scale-lg);
     }
 
@@ -925,7 +925,7 @@ body[data-page="experience"] {
         padding: var(--scale-md) var(--scale-xl);
     }
 
-    main section {
+    main > section {
         padding: var(--scale-xl);
     }
 
