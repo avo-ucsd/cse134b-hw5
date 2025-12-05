@@ -130,12 +130,8 @@
     }
 
     a { 
+        color: var(--color-sunset-3, #8b7aff);
         text-decoration: none;
-        color: var(--color-sunset-3, #715eea);
-    }
-
-    a:hover {
-        color: oklch(from var(--color-sunset-3, #715eea) var(--color-link-hover, calc(l - 0.25) c h));
     }
 }
 
@@ -339,6 +335,18 @@
             h2, h3, p, ul {
                 margin-bottom: var(--scale-sm, 1rem);
             }
+
+            a {            
+                color: var(--color-text, #1e1d20);
+                font-weight: var(--font-weight-bld, 600);
+                text-decoration: underline;
+                text-underline-offset: 0.2rem;
+                text-decoration-color: var(--color-sunset-3, #715eea); 
+
+                &:hover {
+                    color: oklch(from var(--color-sunset-3, #715eea) var(--color-link-hover, calc(l - 0.25) c h));
+                }
+            }
         }
 
        /* Highlights section */
@@ -374,8 +382,6 @@
 
                 a {
                     margin: 0 var(--scale-md, 1.5rem) var(--scale-md, 1.5rem);
-                    font-weight: var(--font-weight-bld, 600);
-                    text-decoration: none;
                 }
             }
 
@@ -702,8 +708,8 @@ body[data-page="experience"] {
 
                 &::before {
                     content: '';
-                    width: 15px;
-                    height: 15px;
+                    width: var(--scale-sm, 1rem);
+                    height: var(--scale-sm, 1rem);
                     background: var(--color-foreground-primary, #fcfcfc);
                     border: 2px solid var(--color-sunset-3, #715eea);
                     box-shadow: 3px 3px 0px color-mix(in srgb, var(--color-sunset-3, #715eea) 40%, transparent);
@@ -736,11 +742,6 @@ body[data-page="experience"] {
                     color: color-mix(in srgb, var(--color-text, #1e1d20) 80%, transparent);
                     line-height: 1.6;
                     margin: 0;
-                }
-
-                a {
-                    color: var(--color-sunset-3, #715eea);
-                    font-weight: var(--font-weight-bld, 600);
                 }
             }
         }
