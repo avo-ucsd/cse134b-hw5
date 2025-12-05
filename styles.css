@@ -651,7 +651,7 @@ body[data-page="home"] {
     }
 }
 
-body[data-page="experience"] {
+-body[data-page="experience"] {
     main > section {
         background: var(--color-foreground-primary, #fcfcfc);
         box-shadow: 
