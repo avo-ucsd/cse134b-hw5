@@ -938,6 +938,22 @@ body[data-page="experience"] {
     }
 }
 
+@media print {
+    body[data-page="experience"] {
+        .experience-main {
+            display: none;
+        }
+
+        .experience-print {
+            display: block;
+        }
+    }
+
+    header, footer, noscript {
+        display: none;
+    }
+}
+
 /* ===== User Preferences ===== */
 @media (prefers-reduced-motion: reduce) {
     * {
