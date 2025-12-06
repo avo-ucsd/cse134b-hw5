@@ -322,7 +322,12 @@
                 rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
             
             > section {
-                margin-bottom: var(--scale-lg, 1.5rem);
+                margin-bottom: var(--scale-xl, 1.5rem);
+
+                h3 {
+                    font-family: var(--font-display);
+                    font-weight: var(--font-weight-bld, 600);
+                }
             }
 
             h2 {
@@ -355,30 +360,39 @@
             }
 
             details {
-                border: 1px 
+                border: 2px 
                         solid 
                         color-mix(in srgb, var(--color-text) 60%, transparent);
-                border-radius: 4px;
-                padding: var(--scale-xs, 0.5rem) 
-                         var(--scale-xs, 0.5rem) 
-                         0;
+                border-radius: var(--scale-xs, 0.5rem);
+                padding: var(--scale-sm, 0.5rem);
                 margin-bottom: var(--scale-xs, 0.5rem);
 
                 &[open] {
-                    padding: var(--scale-xs, 0.5rem);
+                    border-color: var(--color-sunset-3, #715eea);
+                    padding: var(--scale-sm, 0.5rem);
+                
+                    summary {
+                        border-bottom: 2px 
+                                       solid 
+                                       var(--color-sunset-3, #715eea);
+                        margin-bottom: var(--scale-sm, 0.5rem);
+                        color: var(--color-sunset-3, #715eea);
+                    }
+                }
+
+                &:hover {
+                    border-color: var(--color-sunset-3, #715eea);
+                    transition: border-color 0.1s ease !important;
 
                     summary {
-                        border-bottom: 1px solid #aaaaaa;
-                        margin-bottom: var(--scale-xs, 0.5rem);
+                        color: var(--color-sunset-3, #715eea);
                     }
                 }
             }
 
             summary {
                 font-weight: bold;
-                margin: calc(var(--scale-xs, 0.5rem) * -1) 
-                        calc(var(--scale-xs, 0.5rem) * -1)
-                        0;
+                margin: calc(var(--scale-xs, 0.5rem) * -1);
                 padding: var(--scale-xs, 0.5rem);
             }
         }
