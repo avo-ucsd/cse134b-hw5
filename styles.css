@@ -320,6 +320,10 @@
                 rgba(var(--color-shadow-1, 49, 44, 66), var(--shadow-alpha-soft, 0.1)),
                 var(--shadow-displacement-down-2, 0 2px 4px)
                 rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
+            
+            > section {
+                margin-bottom: var(--scale-lg, 1.5rem);
+            }
 
             h2 {
                 font-family: var(--font-display);
@@ -348,6 +352,34 @@
                     color: oklch(from var(--color-sunset-3, #715eea) var(--color-link-hover, calc(l - 0.25) c h));
                     text-underline-offset: 0.4em;
                 }
+            }
+
+            details {
+                border: 1px 
+                        solid 
+                        color-mix(in srgb, var(--color-text) 60%, transparent);
+                border-radius: 4px;
+                padding: var(--scale-xs, 0.5rem) 
+                         var(--scale-xs, 0.5rem) 
+                         0;
+                margin-bottom: var(--scale-xs, 0.5rem);
+
+                &[open] {
+                    padding: var(--scale-xs, 0.5rem);
+
+                    summary {
+                        border-bottom: 1px solid #aaaaaa;
+                        margin-bottom: var(--scale-xs, 0.5rem);
+                    }
+                }
+            }
+
+            summary {
+                font-weight: bold;
+                margin: calc(var(--scale-xs, 0.5rem) * -1) 
+                        calc(var(--scale-xs, 0.5rem) * -1)
+                        0;
+                padding: var(--scale-xs, 0.5rem);
             }
         }
 
