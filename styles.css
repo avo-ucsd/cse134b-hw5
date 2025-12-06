@@ -322,7 +322,7 @@
                 rgba(var(--color-shadow-2, 105, 87, 173), var(--shadow-alpha-hard, 0.15));
             
             > section {
-                margin-bottom: var(--scale-xl, 1.5rem);
+                margin-bottom: var(--scale-xl, 3rem);
 
                 h3 {
                     font-family: var(--font-display);
@@ -333,13 +333,18 @@
             h2 {
                 font-family: var(--font-display);
                 font-weight: var(--font-weight-bld, 600);
+                font-size: var(--scale-lg, 2rem);
                 background: linear-gradient(90deg,
                     color-mix(in srgb, var(--color-sunset-1, #d64a4a), var(--color-light-mix, white 15%)),
                     color-mix(in srgb, var(--color-sunset-3, #715eea), var(--color-light-mix, white 15%))
                 );
+                -webkit-text-fill-color: transparent;
                 -webkit-background-clip: text;
                 background-clip: text;
-                -webkit-text-fill-color: transparent;
+            }
+
+            h3 {
+                font-size: var(--scale-md, 1.5rem);
             }
 
             h2, h3, p, ul {
@@ -367,6 +372,12 @@
                 padding: var(--scale-sm, 0.5rem);
                 margin-bottom: var(--scale-xs, 0.5rem);
 
+                summary {
+                    font-weight: bold;
+                    margin: calc(var(--scale-xs, 0.5rem) * -1);
+                    padding: var(--scale-xs, 0.5rem);
+                }
+
                 &[open] {
                     border-color: var(--color-sunset-3, #715eea);
                     padding: var(--scale-sm, 0.5rem);
@@ -388,12 +399,6 @@
                         color: var(--color-sunset-3, #715eea);
                     }
                 }
-            }
-
-            summary {
-                font-weight: bold;
-                margin: calc(var(--scale-xs, 0.5rem) * -1);
-                padding: var(--scale-xs, 0.5rem);
             }
         }
 
